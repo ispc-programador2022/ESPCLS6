@@ -2,7 +2,12 @@
 Grupo ESPCLS6
 
 Formado por:
-
+          Castilla Marilena
+          Espada Cecilia
+          López Gabriela
+          Peralta Laura
+          Siccardi Luis 
+          Solá Martín
 
 PROYECTO GAMA
 

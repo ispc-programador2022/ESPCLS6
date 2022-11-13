@@ -32,7 +32,7 @@ def CrearCSV(tabla):
     nombre_completo = nombre + ".csv"
     ruta = carpeta + nombre_completo
     
-    tabla.to_csv(ruta, sep=';', columns=columnas, encoding='utf-8', index=False)
+    tabla.to_csv(ruta, sep=',', columns=columnas, encoding='utf-8', index=False) # modifique el sep=';' por sep=',' para poder trabajar con pandas y que identifique las columnas
     print('\n\t*====================================*')
     print('\t* Se creo el archivo correctamente!! *')
     print('\t*====================================*')

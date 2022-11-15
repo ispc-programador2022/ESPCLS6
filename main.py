@@ -2,6 +2,7 @@
 import informacion as info
 import base_datos as bd
 import web_scraping as ws
+#import informe
 
 #Se importan los módulos a utilizar:
 import os   #Se usa el modulo os para pausar la ejecución hasta que se oprima una tecla
@@ -14,6 +15,7 @@ def Error():
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
+    menu(True)
 
 def menu(bandera, archivo='lalala'):
     while bandera:
@@ -25,10 +27,12 @@ def menu(bandera, archivo='lalala'):
         print("5. Salir")
         print(' ')
         opcion_menu = int(input("Seleccione una opción: "))
-    
+            
         if opcion_menu > 5:
             Error()
-
+        if opcion_menu < 1:
+            Error()
+       
         if opcion_menu == 1:
             info.menu(True)
 
@@ -45,6 +49,12 @@ def menu(bandera, archivo='lalala'):
             
         if opcion_menu == 4:
             print("FALTA HACER ESTO!!!")
+            print('Generando informe. Aguarde un momento por favor...')
+            df = ws.Ejecutar()
+            os.system('pause')
+            print('A continuación se muestra el informe solicitado:')
+            time.sleep(2)
+            ws.CrearCSV(df)
 
         if opcion_menu == 5:
             bandera = False

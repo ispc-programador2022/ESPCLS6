@@ -6,7 +6,6 @@ import time                          #Se usa para pausar, por un tiempo definido
 from os import system                #Se usa el modulo os para pausar la ejecución hasta que se oprima una tecla
 
 
-
 #Respecto al trabajo realizado
 def LibreríasUtilizadas(de):
     if de == 'WS':
@@ -80,7 +79,18 @@ def menu(a):
         print("\t2. Scripts desarrollados")
         print("\t3. Quienes somos?")
         print("\t4. Volver al menu principal\n")
-        opc = int(input('Seleccione una opción: '))
+        while True:
+            try:
+                opc = int(input("Seleccione una opción: "))
+                break
+            except ValueError:
+                print("Oops! Seleccione una opción numérica por favor: ")
+                Error()
+                    
+        if opc > 4:
+            Error()
+        if opc < 1:
+            Error()
         
         if opc == 1:
             WebScraping()

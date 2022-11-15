@@ -26,8 +26,15 @@ def menu(bandera, archivo='lalala'):
         print("4. Generar informe")
         print("5. Salir")
         print(' ')
-        opcion_menu = int(input("Seleccione una opción: "))
-            
+       
+        while True:
+            try:
+                opcion_menu = int(input("Seleccione una opción: "))
+                break
+            except ValueError:
+                print("Oops! Seleccione una opción numérica por favor: ")
+                Error()
+                    
         if opcion_menu > 5:
             Error()
         if opcion_menu < 1:

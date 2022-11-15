@@ -14,7 +14,7 @@ Este trabajo surge como propuesta del espacio curricular de *Proyecto Integrador
 
 En esta oportunidad tenemos que desarrollar el “Proyecto Gamma” en el cual realizamos un Web Scraping para posteriormente guardar los datos obtenidos en una base de datos.
 
-¿Qué es el Web Scraping? Es el proceso de extracción de datos almacenados en la web, cuyo objetivo es recopilar la información en un servidor y tiene múltiples aplicaciones como por ejemplo obtener información sobre un producto y sus reseñas en un eCommerce o  de las noticias de un diario digital para posteriormente realizar un análisis.
+*¿Qué es el Web Scraping?* Es el proceso de extracción de datos almacenados en la web, cuyo objetivo es recopilar la información en un servidor y tiene múltiples aplicaciones como por ejemplo obtener información sobre un producto y sus reseñas en un eCommerce o  de las noticias de un diario digital para posteriormente realizar un análisis.
 En esta ocasión nuestro proyecto se basa en la información obtenida en la página web de la Prefectura Naval Argentina, de la cual obtendremos la información sobre los niveles de los ríos. 
 
 # DESARROLLO

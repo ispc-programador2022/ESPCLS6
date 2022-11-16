@@ -10,7 +10,12 @@ from os import system                #Se usa el modulo os para pausar la ejecuci
 def LibreríasUtilizadas(de):
     if de == 'WS':
         print('Acá se indican las librerías utilizadas en Web Scraping')
-        print(' > Librería Requests:')
+
+        print(' > Librería Requests: Requests es una librería de Python que facilita realizar las peticiones con protocolo HTTP. En el Web Scraping la utilizamos para hacer la petición GET al sitio web a scrapear.')
+        print(' > Beautiful Soup: Beautiful Soup es una librería de Python para extraer datos de archivos HTML y XML. Funciona con su analizador favorito para proporcionar formas idiomáticas de navegar, buscar y modificar el esquema de análisis. La utilizamos en este proyecto para extraer los datos de la web y la combinamos con el “HTML parser” LXML.')
+        print(' > Módulo LXML: LXML es un módulo de Python que se encarga de  procesar documentos XML y HTML y convertirlos en datos. Este módulo lo utilizamos para el Web Scraping al momento de extraer el contenido HTML de una web. LXML es conocido como un “HTML parser”')
+        print(' > Pandas Pandas es una librería de Python especializada en el manejo y análisis de estructuras de datos. Permite leer y escribir fácilmente Dataframes, ficheros en formato CSV, Excel y bases de datos SQL. Crea estructuras de datos en formato array. Además posee métodos para reordenar, dividir y combinar conjuntos de datos. En nuestro caso, usamos Pandas para la creación y el manejo de Dataframes y archivos .csv, como así también para la visualización de esos datos.')
+
         print('\tDesea acceder a la Documentación? (1.SI o 2.NO): ')
         documentacion = int(input(': '))
         if documentacion == 1:
@@ -48,16 +53,25 @@ def WebScraping():
 
 #Respecto al equipo de desarrollo
 def Nosotros():
-    print('Acá se citan los miembros del grupo y se indican sus respectivos roles')
+    print('Nuestro grupo es ESPCLS6 y somos estudiantes de primer año de la Tecnicatura Superior en Ciencias de Datos e Inteligencia Artificial del Instituto Superior Politécnico Córdoba.')
+    print(' * Cecilia Espada')
+    print(' * Luis Siccardi')
+    print(' * Laura Peralta')
+    print(' * Marilena Castilla')
+    print(' * Gabriela López')
+    print(' * Martín Solá')
+    print(' ')
+
     Recursos('Trello')
     Recursos('Github')
+    time.sleep(2)
     print('\n>> Regresando. Aguarde un momento por favor...')
 
 def Recursos(ver):
     if ver == 'Trello':
-        print('Acá va el link al tablero de Trello')
+        print('https://trello.com/b/6QsPP1hR/desarrollo-web-scraping')
     if ver == 'Github':
-        print('Acá va el link al repo de Github')
+        print('https://github.com/ispc-programador2022/ESPCLS6')
 
 def Retorna():
     main.menu(True)

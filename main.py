@@ -56,12 +56,10 @@ def menu(bandera, archivo='lalala'):
             
         if opcion_menu == 4:
             print('Generando informe. Aguarde un momento por favor...')
-            inf.menu(True, archivo)
+            inf.menu(True)
             os.system('pause')
-            print('A continuación se muestra el informe solicitado:')
             time.sleep(2)
            
-
         if opcion_menu == 5:
             bandera = False
             print('\n')

@@ -22,10 +22,11 @@ def Error():
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
+    menu()
 
-def menu():
-    ruta = "C:\\Users\\Dell\\Document\\pepepe.csv"                #Instancia de la clase
-    bandera = True
+def menu(b):
+    ruta = "C:\\Users\\Dell\\Document\\pepepe.csv"              
+    bandera = b
     #Si el archivo no esta creado, retorna al menu para crearlo
     if ruta == 'lalala':
         print('\n\t||            ----> ERROR <----            ||')
@@ -43,8 +44,20 @@ def menu():
         print("\t3. Informar cual fue la BAJA MAXIMA")
         print("\t4. Calcular la media de variación")
         print("\t5. Volver al menu principal\n")
-        opc = int(input('Seleccione una opción: '))
-        
+                
+        while True:
+            try:
+                opc = int(input("Seleccione una opción: "))
+                break
+            except ValueError:
+                print("Oops! Seleccione una opción numérica por favor: ")
+                Error()
+                    
+        if opc > 5:
+            Error()
+        if opc < 1:
+            Error()
+            
         if opc == 1:
             print(rios_df)
             time.sleep(2)
@@ -63,7 +76,4 @@ def menu():
         if opc == 5:
             bandera = False                
             Retorna()
-        if opc > 5:
-            Error()
-
-menu()
+      

@@ -2,7 +2,7 @@
 import informacion as info
 import base_datos as bd
 import web_scraping as ws
-#import informe
+import informe as inf
 
 #Se importan los módulos a utilizar:
 import os   #Se usa el modulo os para pausar la ejecución hasta que se oprima una tecla
@@ -55,13 +55,12 @@ def menu(bandera, archivo='lalala'):
             bd.menu(True, archivo)
             
         if opcion_menu == 4:
-            print("FALTA HACER ESTO!!!")
             print('Generando informe. Aguarde un momento por favor...')
-            df = ws.Ejecutar()
+            inf.menu(True, archivo)
             os.system('pause')
             print('A continuación se muestra el informe solicitado:')
             time.sleep(2)
-            ws.CrearCSV(df)
+           
 
         if opcion_menu == 5:
             bandera = False

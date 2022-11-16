@@ -65,22 +65,24 @@ def menu(b):
             Error()
             
         if opc == 1:
+            print('\n\t*===================================*')
+            print('\t*===========Tabla de datos=========== *')
+            print('\t*====================================*')
             print(rios_df)
             time.sleep(2)
         if opc == 2:
             max_df = rios_df['Variación'].max()
-            print(max_df)
+            print("La SUBA MAXIMA fue: ",max_df)
             time.sleep(2)
         if opc == 3:
             min_df = rios_df['Variación'].min()
-            print(min_df)
+            print("La BAJA MAXIMA fue: ",min_df)
             time.sleep(2)
         if opc == 4:
             mean_df = rios_df['Variación'].mean()
-            print(mean_df)
+            print("La media de variación fue: ",mean_df)
             time.sleep(2)
         if opc == 5:
             bandera = False                
             Retorna()
       
-

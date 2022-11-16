@@ -11,6 +11,10 @@ rios_df = pd.read_csv("C:\\Users\\Dell\\Desktop\\ESPCLS6\\datos.csv") # Ruta y n
 #print(rios_df.columns) # columnas
 #tipo de datos print(rios_df.dtypes)
 
+rios_df['Variación'] = rios_df['Variación'].astype('string')
+rios_df['Variación']=rios_df['Variación'].str.ljust(2, "0")
+
+niveles_df=rios_df[['Variación']]
 rios_df=rios_df.astype({'Variación': 'float64'})
 
 def Retorna():

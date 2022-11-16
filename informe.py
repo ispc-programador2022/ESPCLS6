@@ -4,9 +4,9 @@ import pandas as pd
 import time
 import os
 
-#r = web_scraping.CrearCSV()
+rutacsv = ('C:\\Users\\Dell\\Desktop\\ESPCLS6\\datos.csv')
 
-rios_df = pd.read_csv("C:\\Users\\Dell\\Desktop\\ESPCLS6\\datos.csv") # Ruta y nombre de archivo.csv
+rios_df = pd.read_csv(rutacsv) # Ruta y nombre de archivo.csv
 
 #print(rios_df.columns) # columnas
 #tipo de datos print(rios_df.dtypes)
@@ -29,8 +29,10 @@ def Error():
     menu()
 
 def menu(b):
-    ruta = "C:\\Users\\Dell\\Desktop\\ESPCLS6\\datos.csv"              
+          
+    ruta = rutacsv              
     bandera = b
+    
     #Si el archivo no esta creado, retorna al menu para crearlo
     if ruta == 'lalala':
         print('\n\t||            ----> ERROR <----            ||')
@@ -81,3 +83,4 @@ def menu(b):
             bandera = False                
             Retorna()
       
+

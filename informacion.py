@@ -68,8 +68,10 @@ def Error():
     print('*==========================*')
     system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
+    menu()
 
 def menu(a):
+
     bandera = a
 
     while bandera:

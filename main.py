@@ -20,7 +20,9 @@ def Error():
 def menu(bandera, archivo='lalala'):
     while bandera:
         print("\n==>  MENU PRINCIPAL  <==\n")
-        print("1. Información sobre el trabajo desarrollado")
+        print("Nuestro web scraping informar la máxima suba, la máxima baja y la media")
+        print("de la variación de los niveles de los ríos navegables de Argentina.")
+        print("\n1. Información sobre el trabajo desarrollado")
         print("2. Realizar Web Scraping")
         print("3. Cargar Base de Datos")
         print("4. Generar informe")

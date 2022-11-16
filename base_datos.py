@@ -82,14 +82,14 @@ class BaseDatos():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                archivo = pandas.read_csv(dir, index_col=False, delimiter=';')  #se indica el archivo a utilizar
+                archivo = pandas.read_csv(dir, index_col=False, delimiter=',')  #se indica el archivo a utilizar
                 archivo.head()
                 
                 for i, row in archivo.iterrows():       #recorre el archivo y carga los datos en la base de datos
                     sentencia = 'INSERT INTO altura_rios.altura_rios_data VALUES (%s,%s,%s,%s)'
                     cursor.execute(sentencia, tuple(row))
                     print('Nuevo dato cargado correctamente! ')
-                    self.conexion.commit()
+                    self.conexion.commit()              #guarda los cambios en la base de datos
                 print('\n\t*===============================================================*')
                 print('\t*Los datos fueron importados correctamente en la base de datos! *')
                 print('\t*===============================================================*')
@@ -129,15 +129,16 @@ class BaseDatos():
         print('\n>> Regresando. Aguarde un momento por favor...')
     
 
-def Retorna():
-    main.menu(True)
+def Retorna(direccion):
+    main.menu(True, direccion)
 
-def Error():
+def Error(archivo):
     print('*==========================*')
     print('*     Opción no válida     *')
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
+    menu(True, archivo)
 
 def menu(a, ruta):
     bandera = a
@@ -150,7 +151,7 @@ def menu(a, ruta):
         print('\t||    ---------------------------------    ||')
         print('\n>> Regresando. Aguarde un momento por favor...')
         time.sleep(4)
-        Retorna()
+        Retorna(ruta)
 
 
     while bandera:
@@ -160,7 +161,16 @@ def menu(a, ruta):
         print("\t3. Importar datos desde el archivo CSV")
         print("\t4. Ver tabla cargada")
         print("\t5. Volver al menu principal\n")
-        opc = int(input('Seleccione una opción: '))
+        while True:
+            try:
+                opc = int(input("Seleccione una opción: "))
+                break
+            except ValueError:
+                print("Oops! Seleccione una opción numérica por favor: ")
+                Error(ruta)
+                    
+        if opc > 5 or opc < 1:
+            Error(ruta)
         
         if opc == 1:
             bd.CrearBaseDatos()
@@ -176,6 +186,4 @@ def menu(a, ruta):
             
         if opc == 5:
             bandera = False                
-            Retorna()
-        if opc > 5:
-            Error()
+            Retorna(ruta)

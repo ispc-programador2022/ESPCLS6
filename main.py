@@ -9,19 +9,17 @@ import os   #Se usa el modulo os para pausar la ejecución hasta que se oprima u
 import time     # Se usa para pausar, por un tiempo definido la ejecución
 
 
-def Error():
+def Error(url_archivo):
     print('*==========================*')
     print('*     Opción no válida     *')
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
-    menu()
+    menu(True, url_archivo)
 
-def menu(bandera, archivo='lalala'):
+def menu(bandera, archivo):
     while bandera:
         print("\n==>  MENU PRINCIPAL  <==\n")
-        print("Nuestro web scraping informar la máxima suba, la máxima baja y la media")
-        print("de la variación de los niveles de los ríos navegables de Argentina.")
         print("\n1. Información sobre el trabajo desarrollado")
         print("2. Realizar Web Scraping")
         print("3. Cargar Base de Datos")
@@ -35,15 +33,13 @@ def menu(bandera, archivo='lalala'):
                 break
             except ValueError:
                 print("Oops! Seleccione una opción numérica por favor: ")
-                Error()
+                Error(archivo)
                     
-        if opcion_menu > 5:
-            Error()
-        if opcion_menu < 1:
-            Error()
+        if opcion_menu > 5 or opcion_menu < 1:
+            Error(archivo)
        
         if opcion_menu == 1:
-            info.menu(True)
+            info.menu(True, archivo)
 
         if opcion_menu == 2:
             print('Ejecutando Scraping. Aguarde un momento por favor...')
@@ -57,8 +53,8 @@ def menu(bandera, archivo='lalala'):
             bd.menu(True, archivo)
             
         if opcion_menu == 4:
-            print('Generando informe. Aguarde un momento por favor...')
-            inf.menu(True)
+            #print('Generando informe. Aguarde un momento por favor...')
+            inf.menu(True, archivo)
             os.system('pause')
             time.sleep(2)
            
@@ -75,4 +71,5 @@ def menu(bandera, archivo='lalala'):
             
 
 if __name__ == '__main__':
-    menu(True)    
+    Archivo='lalala'
+    menu(True, Archivo)

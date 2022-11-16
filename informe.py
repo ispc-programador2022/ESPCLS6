@@ -1,38 +1,28 @@
 import main
+
 import web_scraping as ws
 import pandas as pd
 import time
 import os
 
-rutacsv = ('C:\\Users\\Dell\\Desktop\\ESPCLS6\\datos.csv')
+def generaDf(rutacsv):
+    df = pd.read_csv(rutacsv) # Ruta y nombre de archivo.csv
+    return df
 
-rios_df = pd.read_csv(rutacsv) # Ruta y nombre de archivo.csv
+def Retorna(direccion):
+    main.menu(True, direccion)
 
-#print(rios_df.columns) # columnas
-#tipo de datos print(rios_df.dtypes)
-
-rios_df['Variación'] = rios_df['Variación'].astype('string')
-rios_df['Variación']=rios_df['Variación'].str.ljust(2, "0")
-
-niveles_df=rios_df[['Variación']]
-rios_df=rios_df.astype({'Variación': 'float64'})
-
-def Retorna():
-    main.menu(True)
-
-def Error():
+def Error(archivo):
     print('*==========================*')
     print('*     Opción no válida     *')
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
-    menu()
+    menu(True, archivo)
 
-def menu(b):
-          
-    ruta = rutacsv              
+def menu(b, ruta):
     bandera = b
-    
+
     #Si el archivo no esta creado, retorna al menu para crearlo
     if ruta == 'lalala':
         print('\n\t||            ----> ERROR <----            ||')
@@ -40,10 +30,10 @@ def menu(b):
         print('\t||    ---------------------------------    ||')
         print('\n>> Regresando. Aguarde un momento por favor...')
         time.sleep(4)
-        Retorna()
-
+        Retorna(ruta)
 
     while bandera:
+        df = generaDf(ruta)
         print("\n\t-->  SUBMENU INFORME  <--\n")
         print("\t1. Mostrar tabla de datos")
         print("\t2. Informar cual fue la SUBA MAXIMA")
@@ -57,32 +47,46 @@ def menu(b):
                 break
             except ValueError:
                 print("Oops! Seleccione una opción numérica por favor: ")
-                Error()
+                Error(ruta)
                     
-        if opc > 5:
-            Error()
-        if opc < 1:
-            Error()
+        if opc > 5 or opc < 1:
+            Error(ruta)
             
         if opc == 1:
             print('\n\t*===================================*')
             print('\t*===========Tabla de datos=========== *')
             print('\t*====================================*')
-            print(rios_df)
+            print(df)
             time.sleep(2)
         if opc == 2:
-            max_df = rios_df['Variación'].max()
-            print("La SUBA MAXIMA fue: ",max_df)
+            df['Variación'] = df['Variación'].astype('string')
+            df['Variación']=df['Variación'].str.ljust(2, "0")
+            niveles_df=df[['Variación']]
+            df = df.astype({'Variación': 'float64'})
+
+            max_df = df['Variación'].max()      #calcula el maximo
+            print("La SUBA MAXIMA fue: ", max_df)
             time.sleep(2)
         if opc == 3:
-            min_df = rios_df['Variación'].min()
-            print("La BAJA MAXIMA fue: ",min_df)
+            df['Variación'] = df['Variación'].astype('string')
+            df['Variación']=df['Variación'].str.ljust(2, "0")
+
+            niveles_df=df[['Variación']]
+            df = df.astype({'Variación': 'float64'})
+            
+            min_df = df['Variación'].min()      #calcula el minimo
+            print("La BAJA MAXIMA fue: ", min_df)
             time.sleep(2)
         if opc == 4:
-            mean_df = rios_df['Variación'].mean()
-            print("La media de variación fue: ",mean_df)
+            df['Variación'] = df['Variación'].astype('string')
+            df['Variación']=df['Variación'].str.ljust(2, "0")
+
+            niveles_df=df[['Variación']]
+            df = df.astype({'Variación': 'float64'})
+
+            mean_df = df['Variación'].mean()       #calcula el promedio (media aritmética)
+            print("La media de variación fue: ", mean_df)
             time.sleep(2)
         if opc == 5:
             bandera = False                
-            Retorna()
-      
+            Retorna(ruta)

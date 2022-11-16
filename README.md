@@ -23,4 +23,6 @@ Se hace Scraping de niveles de los ríos
 
 
 # DESARROLLO
-Para la organización de nuestro equipo de trabajo utilizamos la herramienta Trello, en la cual nos dividimos las tareas a realizar. Para la realización del mismo utilizamos Python, las librerías Beautiful Soup, Requests  y Pandas. Luego la información obtenida la almacenamos en una base de datos utilizando MySQL.
+Para la organización de nuestro equipo de trabajo utilizamos la herramienta Trello, en la cual nos dividimos las tareas a realizar. 
+Para la realización del mismo utilizamos Python con las librerías Beautiful Soup, Requests  y Pandas.
+Luego la información obtenida la almacenamos en una base de datos utilizando MySQL.

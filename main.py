@@ -15,7 +15,7 @@ def Error():
     print('*==========================*')
     os.system('pause')
     print('\n>> Regresando. Aguarde un momento por favor...')
-    menu(True)
+    menu()
 
 def menu(bandera, archivo='lalala'):
     while bandera:

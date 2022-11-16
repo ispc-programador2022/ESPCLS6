@@ -17,5 +17,10 @@ En esta oportunidad tenemos que desarrollar el “Proyecto Gamma” en el cual r
 *¿Qué es el Web Scraping?* Es el proceso de extracción de datos almacenados en la web, cuyo objetivo es recopilar la información en un servidor y tiene múltiples aplicaciones como por ejemplo obtener información sobre un producto y sus reseñas en un eCommerce o  de las noticias de un diario digital para posteriormente realizar un análisis.
 En esta ocasión nuestro proyecto se basa en la información obtenida en la página web de la Prefectura Naval Argentina, de la cual obtendremos la información sobre los niveles de los ríos. 
 
+Se utilizo la web de la prefectura naval  en el siguiente link https://contenidosweb.prefecturanaval.gob.ar/alturas/
+
+Se hace Scraping de niveles de los ríos  
+
+
 # DESARROLLO
 Para la organización de nuestro equipo de trabajo utilizamos la herramienta Trello, en la cual nos dividimos las tareas a realizar. Para la realización del mismo utilizamos Python, las librerías Beautiful Soup, Requests  y Pandas. Luego la información obtenida la almacenamos en una base de datos utilizando MySQL.

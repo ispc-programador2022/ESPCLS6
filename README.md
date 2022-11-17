@@ -21,6 +21,25 @@ Se utilizo la web de la prefectura naval  en el siguiente link https://contenido
 
 Se hace Scraping de niveles de los ríos  
 
+# LIBRERÍAS UTILIZADAS
+
+## Requests
+
+Requests es una librería de Python que facilita realizar las peticiones con protocolo HTTP. En el Web Scraping la utilizamos para hacer la petición GET al sitio web a scrapear.  
+
+## Beautiful Soup
+
+Beautiful Soup es una librería de Python para extraer datos de archivos HTML y XML. Funciona con su analizador favorito para proporcionar formas idiomáticas de navegar, buscar y modificar el esquema de análisis. La utilizamos en este proyecto para extraer los datos de la web y la combinamos con el “HTML parser” LXML.
+
+## Módulo LXML
+
+LXML es un módulo de Python que se encarga de  procesar documentos XML y HTML y convertirlos en datos. Este módulo lo utilizamos para el Web Scraping al momento de extraer el contenido HTML de una web. LXML es conocido como un “HTML parser”
+
+
+## Pandas
+
+Pandas es una librería de Python especializada en el manejo y análisis de estructuras de datos. Permite leer y escribir fácilmente Dataframes, ficheros en formato CSV, Excel y bases de datos SQL. Crea estructuras de datos en formato array. Además posee métodos para reordenar, dividir y combinar conjuntos de datos. En nuestro caso, usamos Pandas para la creación y el manejo de Dataframes y archivos .csv, como así también para la visualización de esos datos. 
+
 
 # DESARROLLO
 Para la organización de nuestro equipo de trabajo utilizamos la herramienta Trello, en la cual nos dividimos las tareas a realizar. 

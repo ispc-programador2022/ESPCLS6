@@ -109,14 +109,13 @@ class BaseDatos():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                sentenciaSQL = "SHOW CREATE TABLE altura_rios.altura_rios_data"
+                sentenciaSQL = "SELECT * FROM altura_rios.altura_rios_data"
                 cursor.execute(sentenciaSQL)
                 
                 #muestra los datos de la tabla:
                 print('\n------------- DATOS -------------')
-                for dato in cursor:
-                        detalle = ''.join(dato)
-                        print(detalle)
+                for dato in cursor:                         
+                        print(dato)
                 
                 self.conexion.close()
                 os.system('pause')
@@ -142,7 +141,7 @@ def Error(archivo):
 
 def menu(a, ruta):
     bandera = a
-    bd = BaseDatos()                #Instancia de la clase
+    
 
     #Si el archivo no esta creado, retorna al menu para crearlo
     if ruta == 'lalala':
@@ -173,15 +172,19 @@ def menu(a, ruta):
             Error(ruta)
         
         if opc == 1:
+            bd = BaseDatos()                #Instancia de la clase
             bd.CrearBaseDatos()
             time.sleep(2)
         if opc == 2:
+            bd = BaseDatos()  
             bd.CrearTablas()
             time.sleep(2)
         if opc == 3:
+            bd = BaseDatos()                #Instancia de la clase
             bd.InsertarDatos(ruta)
             time.sleep(2)
         if opc == 4:
+            bd = BaseDatos()                #Instancia de la clase
             bd.VerTablaCompleta()
             
         if opc == 5:

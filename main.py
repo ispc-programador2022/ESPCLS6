@@ -17,7 +17,9 @@ def Error(url_archivo):
     print('\n>> Regresando. Aguarde un momento por favor...')
     menu(True, url_archivo)
 
-def menu(bandera, archivo):
+def menu(a, archivo):
+    bandera = a
+
     while bandera:
         print("\n==>  MENU PRINCIPAL  <==\n")
         print("\n1. Información sobre el trabajo desarrollado")

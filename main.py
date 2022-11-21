@@ -63,7 +63,7 @@ def menu(bandera, archivo):
             print('\n')
             print('\t\t*===================================*')
             print('\t\t*===================================*')
-            print('\t\t* GRACIAS POR SU UTILIZAR EL SCRIPT *')
+            print('\t\t*  GRACIAS POR UTILIZAR EL SCRIPT   *')
             print('\t\t*          PONGANOS 10! :D          *')
             print('\t\t*===================================*')
             print('\t\t*===================================*')

@@ -114,15 +114,15 @@ def Recursos(ver):
     if ver == 'Trello':
         print('https://trello.com/b/6QsPP1hR/desarrollo-web-scraping')
         print('\tDesea acceder? (1.SI o 2.NO): ')
-        documentacion = int(input(': '))
-        if documentacion == 1:
+        acceso = int(input(': '))
+        if acceso == 1:
             webbrowser.open("https://trello.com/b/6QsPP1hR/desarrollo-web-scraping", new=2, autoraise=True)
             system('pause')
     if ver == 'Github':
         print('https://github.com/ispc-programador2022/ESPCLS6')
         print('\tDesea acceder? (1.SI o 2.NO): ')
-        documentacion = int(input(': '))
-        if documentacion == 1:
+        acceso = int(input(': '))
+        if acceso == 1:
             webbrowser.open("https://github.com/ispc-programador2022/ESPCLS6", new=2, autoraise=True)
             system('pause')
         

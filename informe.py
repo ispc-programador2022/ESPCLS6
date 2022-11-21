@@ -9,6 +9,12 @@ def generaDf(rutacsv):
     df = pd.read_csv(rutacsv) # Ruta y nombre de archivo.csv
     return df
 
+def convertidor(dataframe):
+    dataframe['Variación'] = dataframe['Variación'].astype('string')
+    dataframe['Variación'] = dataframe['Variación'].str.ljust(2, "0")
+    dataframe = dataframe.astype({'Variación': 'float64'})
+    return dataframe
+
 def Retorna(direccion):
     main.menu(True, direccion)
 
@@ -59,32 +65,26 @@ def menu(b, ruta):
             print(df)
             time.sleep(2)
         if opc == 2:
-            df['Variación'] = df['Variación'].astype('string')
-            df['Variación']=df['Variación'].str.ljust(2, "0")
-            #niveles_df=df[['Variación']]
-            df = df.astype({'Variación': 'float64'})
+            df2 = convertidor(df)
 
-            max_df = df['Variación'].max()      #calcula el maximo
+            max_df = df2['Variación'].max()      #calcula el maximo
             print("La SUBA MAXIMA fue: ", max_df)
             time.sleep(2)
         if opc == 3:
-            df['Variación'] = df['Variación'].astype('string')
-            df['Variación']=df['Variación'].str.ljust(2, "0")
-
-            #niveles_df=df[['Variación']]
-            df = df.astype({'Variación': 'float64'})
+            df2 = convertidor(df)
             
-            min_df = df['Variación'].min()      #calcula el minimo
+            min_df = df2['Variación'].min()      #calcula el minimo
             print("La BAJA MAXIMA fue: ", min_df)
             time.sleep(2)
         if opc == 4:
-            df['Variación'] = df['Variación'].astype('string')
+            df2 = convertidor(df)
+            '''df['Variación'] = df['Variación'].astype('string')
             df['Variación']=df['Variación'].str.ljust(2, "0")
 
             #niveles_df=df[['Variación']]
-            df = df.astype({'Variación': 'float64'})
+            df = df.astype({'Variación': 'float64'})'''
 
-            mean_df = df['Variación'].mean()       #calcula el promedio (media aritmética)
+            mean_df = df2['Variación'].mean()       #calcula el promedio (media aritmética)
             print("La media de variación fue: ", mean_df)
             time.sleep(2)
         if opc == 5:

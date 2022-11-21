@@ -61,7 +61,7 @@ def menu(b, ruta):
         if opc == 2:
             df['Variación'] = df['Variación'].astype('string')
             df['Variación']=df['Variación'].str.ljust(2, "0")
-            niveles_df=df[['Variación']]
+            #niveles_df=df[['Variación']]
             df = df.astype({'Variación': 'float64'})
 
             max_df = df['Variación'].max()      #calcula el maximo
@@ -71,7 +71,7 @@ def menu(b, ruta):
             df['Variación'] = df['Variación'].astype('string')
             df['Variación']=df['Variación'].str.ljust(2, "0")
 
-            niveles_df=df[['Variación']]
+            #niveles_df=df[['Variación']]
             df = df.astype({'Variación': 'float64'})
             
             min_df = df['Variación'].min()      #calcula el minimo
@@ -81,7 +81,7 @@ def menu(b, ruta):
             df['Variación'] = df['Variación'].astype('string')
             df['Variación']=df['Variación'].str.ljust(2, "0")
 
-            niveles_df=df[['Variación']]
+            #niveles_df=df[['Variación']]
             df = df.astype({'Variación': 'float64'})
 
             mean_df = df['Variación'].mean()       #calcula el promedio (media aritmética)
